@@ -3,6 +3,7 @@ version: '3.2'
 services:
   zookeeper:
     image: wurstmeister/zookeeper
+    hostname: zookeeper
     ports:
       - "2181:2181"
     networks:
