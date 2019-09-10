@@ -35,11 +35,7 @@ services:
         options:
           max-size: "10m"
     deploy:
-      mode: replicated
-      replicas: 3
-      update_config:
-        parallelism: 10
-        delay: 2s
+      mode: global
     networks:
       - demo-net
 
