@@ -15,7 +15,6 @@ services:
 
   kafka:
     image: wurstmeister/kafka:latest
-    hostname: kafka
     ports:
       - target: 9094
         published: 9094
@@ -39,6 +38,7 @@ services:
       mode: global
     networks:
       - demo-net
+
 
 networks:
   demo-net:
