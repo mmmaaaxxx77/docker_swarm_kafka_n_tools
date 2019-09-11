@@ -20,6 +20,10 @@ services:
         published: 9094
         protocol: tcp
         mode: host
+      - target: 1299
+        published: 1299
+        protocol: tcp
+        mode: host
     environment:
       #HOSTNAME_COMMAND: "docker info | grep ^Name: | cut -d' ' -f 2"
       HOSTNAME_COMMAND: "eval cat /etc/hostname"
