@@ -3,8 +3,6 @@ FROM java:8-alpine
 ENV KE_HOME=/opt/kafka-eagle
 ENV EAGLE_VERSION=1.3.9
 
-ADD entrypoint.sh /usr/bin
-
 RUN apk --update add wget gettext tar bash sqlite
 
 #get and unpack kafka eagle
@@ -15,10 +13,11 @@ RUN mkdir -p /opt/kafka-eagle/conf;cd /opt && \
     chmod +x /opt/kafka-eagle/bin/ke.sh && \
     mkdir -p /hadoop/kafka-eagle/db
 
-COPY system-config.properties ${EA}/conf/system-config.properties
+ADD entrypoint.sh ${KE_HOME}/entrypoint.sh
+COPY system-config.properties ${KE_HOME}/conf/system-config.properties
 
 EXPOSE 8048 8080
 
-# ENTRYPOINT ["entrypoint.sh"]
-
 WORKDIR /opt/kafka-eagle
+
+ENTRYPOINT ["sh", "entrypoint.sh"]
