@@ -4,7 +4,7 @@ from json import loads
 consumer = KafkaConsumer(
     'topic',
     bootstrap_servers=['35.201.148.193:9094'],
-    group_id='topic')
+    group_id='topic3')
 
 for message in consumer:
     message = message.value
