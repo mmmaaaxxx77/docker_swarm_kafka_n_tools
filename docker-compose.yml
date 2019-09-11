@@ -61,7 +61,7 @@ services:
   db:
     image: mysql:5.7
     restart: always
-    hostname: mysql
+    hostname: db
     environment:
       MYSQL_DATABASE: 'db'
       MYSQL_USER: 'root'
