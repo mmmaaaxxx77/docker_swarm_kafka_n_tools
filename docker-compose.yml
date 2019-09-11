@@ -10,7 +10,7 @@ services:
       - demo-net
     logging:
         driver: "json-file"
-        options:kafka-eagle
+        options:
           max-size: "10m"
 
   kafka:
