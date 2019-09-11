@@ -10,7 +10,7 @@ services:
       - demo-net
     logging:
         driver: "json-file"
-        options:
+        options:kafka-eagle
           max-size: "10m"
 
   kafka:
@@ -40,6 +40,23 @@ services:
     networks:
       - demo-net
 
+  kafka-eagle:
+    build:
+      context: ./kafka-eagle
+      dockerfile: Dockerfile
+    image: 35.201.148.193:5000/kafka-eagle
+    ports:
+      - "8048:8048"
+    logging:
+        driver: "json-file"
+        options:
+          max-size: "10m"
+    networks:
+      - keypo-dump-net
+    deploy:
+      mode: global
+      placement:
+        constraints: [node.labels.rabbitmq1 == true]
 
 networks:
   demo-net:
