@@ -58,6 +58,27 @@ services:
       placement:
         constraints: [node.labels.rabbitmq1 == true]
 
+  db:
+    image: mysql:5.7
+    restart: always
+    environment:
+      MYSQL_DATABASE: 'db'
+      MYSQL_USER: 'root'
+      MYSQL_PASSWORD: 'smartloli'
+      MYSQL_ROOT_PASSWORD: 'smartloli'
+    ports:
+      - '3306:3306'
+    logging:
+        driver: "json-file"
+        options:
+          max-size: "10m"
+    networks:
+      - demo-net
+    deploy:
+      mode: global
+      placement:
+        constraints: [node.labels.rabbitmq1 == true]
+
 networks:
   demo-net:
     external: true
