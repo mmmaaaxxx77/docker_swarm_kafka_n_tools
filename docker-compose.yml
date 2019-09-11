@@ -64,7 +64,7 @@ services:
     hostname: mariadb
     environment:
       MYSQL_DATABASE: 'ke'
-      MYSQL_USER: 'root'
+      MYSQL_USER: 'ke'
       MYSQL_PASSWORD: 'smartloli'
       MYSQL_ROOT_PASSWORD: 'smartloli'
     ports:
