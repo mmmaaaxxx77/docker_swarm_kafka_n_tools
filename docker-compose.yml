@@ -52,7 +52,7 @@ services:
         options:
           max-size: "10m"
     networks:
-      - keypo-dump-net
+      - demo-net
     deploy:
       mode: global
       placement:
