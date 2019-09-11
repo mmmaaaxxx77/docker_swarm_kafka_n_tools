@@ -58,10 +58,10 @@ services:
       placement:
         constraints: [node.labels.rabbitmq1 == true]
 
-  db:
-    image: mysql:5.7
+  mariadb:
+    image: mariadb
     restart: always
-    hostname: db
+    hostname: mariadb
     environment:
       MYSQL_DATABASE: 'db'
       MYSQL_USER: 'root'
