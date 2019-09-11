@@ -44,7 +44,7 @@ services:
     build:
       context: ./kafka-eagle
       dockerfile: Dockerfile
-    image: 35.201.148.193:5000/kafka-eagle
+    image: 10.140.15.238:5000/kafka-eagle
     ports:
       - "8048:8048"
     logging:
