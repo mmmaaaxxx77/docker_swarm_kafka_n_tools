@@ -19,6 +19,6 @@ COPY system-config.properties ${EA}/conf/system-config.properties
 
 EXPOSE 8048 8080
 
-ENTRYPOINT ["entrypoint.sh"]
+# ENTRYPOINT ["entrypoint.sh"]
 
 WORKDIR /opt/kafka-eagle
