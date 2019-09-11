@@ -63,7 +63,7 @@ services:
     restart: always
     hostname: mariadb
     environment:
-      MYSQL_DATABASE: 'db'
+      MYSQL_DATABASE: 'ke'
       MYSQL_USER: 'root'
       MYSQL_PASSWORD: 'smartloli'
       MYSQL_ROOT_PASSWORD: 'smartloli'
