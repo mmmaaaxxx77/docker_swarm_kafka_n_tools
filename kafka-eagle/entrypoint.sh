@@ -1,1 +1,1 @@
-/opt/kafka-eagle/ke.sh start
+/opt/kafka-eagle/bin/ke.sh start

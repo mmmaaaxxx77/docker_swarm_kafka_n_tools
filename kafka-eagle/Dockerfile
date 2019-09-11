@@ -13,11 +13,11 @@ RUN mkdir -p /opt/kafka-eagle/conf;cd /opt && \
     chmod +x /opt/kafka-eagle/bin/ke.sh && \
     mkdir -p /hadoop/kafka-eagle/db
 
-ADD entrypoint.sh ${KE_HOME}/entrypoint.sh
+#ADD entrypoint.sh ${KE_HOME}/entrypoint.sh
 COPY system-config.properties ${KE_HOME}/conf/system-config.properties
 
 EXPOSE 8048 8080
 
 WORKDIR /opt/kafka-eagle
 
-ENTRYPOINT ["sh", "entrypoint.sh"]
+ENTRYPOINT ["/opt/kafka-eagle/bin/ke.sh", "start"]
