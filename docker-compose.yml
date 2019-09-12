@@ -100,9 +100,8 @@ services:
     hostname: manager
     environment:
       ZK_HOSTS: zookeeper:2181
-      http.port: 8080
     ports:
-      - '8080:8080'
+      - '9000:9000'
     logging:
         driver: "json-file"
         options:
