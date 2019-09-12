@@ -94,6 +94,26 @@ services:
       placement:
         constraints: [node.labels.rabbitmq1 == true]
 
+  manager:
+    image: kafkamanager/kafka-manager
+    restart: always
+    hostname: manager
+    environment:
+      ZK_HOSTS: zookeeper:2181
+      http.port: 8080
+    ports:
+      - '8080:8080'
+    logging:
+        driver: "json-file"
+        options:
+          max-size: "10m"
+    networks:
+      - demo-net
+    deploy:
+      mode: global
+      placement:
+        constraints: [node.labels.rabbitmq1 == true]
+
 networks:
   demo-net:
     external: true
