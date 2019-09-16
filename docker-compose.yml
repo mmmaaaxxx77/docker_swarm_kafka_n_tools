@@ -32,7 +32,7 @@ services:
       #HOSTNAME_COMMAND: "docker info | grep ^Name: | cut -d' ' -f 2"
 #      HOSTNAME_COMMAND: "eval cat /etc/hostname"
       HOSTNAME_COMMAND: "curl https://ipinfo.io/ip"
-      BROKER_ID_COMMAND: "hostname | awk -F'-' '{print $$2}'"
+      BROKER_ID_COMMAND: "curl https://ipinfo.io/ip | sed 's/\\.//' | sed 's/\\.//' | sed 's/\\.//'"
 #      KAFKA_ADVERTISED_HOST_NAME: 35.201.148.193
       KAFKA_LOG_DIRS: /kafka
 #      KAFKA_BROKER_ID: _{BROKER_ID_COMMAND}
