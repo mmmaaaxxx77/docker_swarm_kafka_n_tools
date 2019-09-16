@@ -130,46 +130,6 @@ services:
     networks:
       - demo-net
 
-  kafka-eagle:
-    build:
-      context: ./kafka-eagle
-      dockerfile: Dockerfile
-    image: 10.140.15.238:5000/kafka-eagle
-    ports:
-      - "8048:8048"
-    logging:
-        driver: "json-file"
-        options:
-          max-size: "10m"
-    networks:
-      - demo-net
-    deploy:
-      mode: global
-      placement:
-        constraints: [node.labels.rabbitmq1 == true]
-
-  mariadb:
-    image: mariadb
-    restart: always
-    hostname: mariadb
-    environment:
-      MYSQL_DATABASE: 'ke'
-      MYSQL_USER: 'ke'
-      MYSQL_PASSWORD: 'smartloli'
-      MYSQL_ROOT_PASSWORD: 'smartloli'
-    ports:
-      - '3306:3306'
-    logging:
-        driver: "json-file"
-        options:
-          max-size: "10m"
-    networks:
-      - demo-net
-    deploy:
-      mode: global
-      placement:
-        constraints: [node.labels.rabbitmq1 == true]
-
   manager:
     image: kafkamanager/kafka-manager
     restart: always
