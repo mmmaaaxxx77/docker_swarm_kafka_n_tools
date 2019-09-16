@@ -11,4 +11,4 @@ for e in range(1000):
     future = producer.send('topic5', value=data)
     future.get(timeout=10)
     print(f"{future.value}")
-    # sleep(0.1)
+    sleep(1)
