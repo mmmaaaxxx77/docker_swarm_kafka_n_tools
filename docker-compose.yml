@@ -43,8 +43,8 @@ services:
       KAFKA_LISTENERS: INSIDE://:9092,OUTSIDE://:9094
       KAFKA_INTER_BROKER_LISTENER_NAME: INSIDE
 
-      #KAFKA_JMX_OPTS: "-Dcom.sun.management.jmxremote -Dcom.sun.management.jmxremote.authenticate=false -Dcom.sun.management.jmxremote.ssl=false -Djava.rmi.server.hostname=35.201.148.193 -Dcom.sun.management.jmxremote.rmi.port=1099"
-      KAFKA_JMX_OPTS: -Djava.rmi.server.hostname=_{HOSTNAME_COMMAND}
+      KAFKA_JMX_OPTS: "-Dcom.sun.management.jmxremote -Dcom.sun.management.jmxremote.authenticate=false -Dcom.sun.management.jmxremote.ssl=false -Djava.rmi.server.hostname=0.0.0.0 -Dcom.sun.management.jmxremote.rmi.port=1099"
+#      KAFKA_JMX_OPTS: -Djava.rmi.server.hostname=_{HOSTNAME_COMMAND}
       JMX_PORT: 1099
     volumes:
       - /var/run/docker.sock:/var/run/docker.sock
