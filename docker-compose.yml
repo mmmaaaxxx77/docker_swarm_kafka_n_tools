@@ -30,7 +30,7 @@ services:
         mode: host
     environment:
       HOSTNAME_COMMAND: "curl https://ipinfo.io/ip"
-      BROKER_ID_COMMAND: "curl https://ipinfo.io/ip | cut -c 12-15"
+      BROKER_ID_COMMAND: "curl https://ipinfo.io/ip | cut -c 13-15"
       KAFKA_LOG_DIRS: /kafka
       KAFKA_ZOOKEEPER_CONNECT: zookeeper:2181
       KAFKA_LISTENER_SECURITY_PROTOCOL_MAP: INSIDE:PLAINTEXT,OUTSIDE:PLAINTEXT
