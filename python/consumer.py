@@ -3,7 +3,7 @@ from json import loads
 
 consumer = KafkaConsumer(
     'topic5',
-    bootstrap_servers=['35.201.148.193:9094'],
+    bootstrap_servers=['104.199.243.52:9094'],
     group_id='topic9')
 
 for message in consumer:
