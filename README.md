@@ -10,3 +10,26 @@ $ docker stack deploy -c docker-compose.yml kafka
 
 ## kafka-manager UI
 http://{domain or ip}:9000
+
+## Kafka Commands
+Here are some useful kafka commands.
+
+### Show consumer list
+```shell script
+$ ./kafka-consumer-groups.sh --new-consumer --bootstrap-server ip:9092 --list
+```
+
+### Show group now offset
+```shell script
+$ ./kafka-consumer-groups.sh --new-consumer --bootstrap-server ip:9092 --describe --group groupName
+```  
+
+### Reset group offset
+```shell script
+$ ./kafka-consumer-groups.sh --bootstrap-server ip:9092 --group groupName --reset-offsets --to-offset 0 --topic topicName --execute
+```
+
+### Delete comsumer
+```shell script
+./kafka-consumer-groups.sh --bootstrap-server ip:9092 --delete --group <group-name>
+```
