@@ -31,5 +31,14 @@ $ ./kafka-consumer-groups.sh --bootstrap-server ip:9092 --group groupName --rese
 
 ### Delete comsumer
 ```shell script
-./kafka-consumer-groups.sh --bootstrap-server ip:9092 --delete --group <group-name>
+$ ./kafka-consumer-groups.sh --bootstrap-server ip:9092 --delete --group <group-name>
 ```
+
+### Get the earliest offset still in a topic
+```shell script
+$ ./kafka-run-class.sh kafka.tools.GetOffsetShell --broker-list 104.199.243.52:9092 --topic topic1 --time -2
+```
+
+
+## Reference
+https://gist.github.com/ursuad/e5b8542024a15e4db601f34906b30bb5
