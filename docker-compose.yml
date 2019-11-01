@@ -150,7 +150,7 @@ services:
     deploy:
       mode: global
       placement:
-        constraints: [node.labels.rabbitmq1 == true]
+        constraints: [node.labels.node == one]
 
 networks:
   demo-net:
