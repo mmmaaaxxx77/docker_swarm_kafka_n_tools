@@ -8,7 +8,7 @@ producer = KafkaProducer(bootstrap_servers=['104.199.243.52:9092'],
 
 for e in range(1000):
     data = {'number': e}
-    future = producer.send('topic5', value=data)
+    future = producer.send('topic1', value=data)
     future.get(timeout=10)
     print(f"{future.value}")
     sleep(1)
