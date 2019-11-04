@@ -46,6 +46,7 @@ services:
       JMX_PORT: 1099
     volumes:
       - /var/run/docker.sock:/var/run/docker.sock
+      - kafka1_data:/kafka
     logging:
         driver: "json-file"
         options:
@@ -89,6 +90,7 @@ services:
       JMX_PORT: 1099
     volumes:
       - /var/run/docker.sock:/var/run/docker.sock
+      - kafka2_data:/kafka
     logging:
         driver: "json-file"
         options:
@@ -132,6 +134,7 @@ services:
       JMX_PORT: 1099
     volumes:
       - /var/run/docker.sock:/var/run/docker.sock
+      - kafka3_data:/kafka
     logging:
         driver: "json-file"
         options:
@@ -161,6 +164,11 @@ services:
       mode: global
       placement:
         constraints: [node.labels.node == one]
+
+volumes:
+    kafka1_data:
+    kafka2_data:
+    kafka3_data:
 
 networks:
   demo-net:
