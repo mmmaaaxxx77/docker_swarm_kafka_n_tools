@@ -1,5 +1,5 @@
 from kafka import KafkaConsumer, TopicPartition
-from json import loads
+import json
 
 consumer = KafkaConsumer(
     'topic1',
@@ -12,4 +12,4 @@ consumer = KafkaConsumer(
 # consumer.seek(TopicPartition(topic='topic1', partition=2), 0)
 for message in consumer:
     # message = message.value
-    print(f'{message.value} --- {message}')
+    print(f'{json.loads(message.value)} --- {message}')
